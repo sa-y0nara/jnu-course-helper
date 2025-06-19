@@ -6,15 +6,15 @@
 
 ## 目录
 
-  - [✨ 功能特性](https://www.google.com/search?q=%23-%E5%8A%9F%E8%83%BD%E7%89%B9%E6%80%A7)
-  - [🔧 安装方法](https://www.google.com/search?q=%23-%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95)
-  - [📖 使用说明](https://www.google.com/search?q=%23-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
-      - [第一步：捕获选课请求](https://www.google.com/search?q=%23%E7%AC%AC%E4%B8%80%E6%AD%A5%E6%8D%95%E8%8E%B7%E9%80%89%E8%AF%BE%E8%AF%B7%E6%B1%82)
-      - [第二步：设置抢课参数](https://www.google.com/search?q=%23%E7%AC%AC%E4%BA%8C%E6%AD%A5%E8%AE%BE%E7%BD%AE%E6%8A%A2%E8%AF%BE%E5%8F%82%E6%95%B0)
-      - [第三步：锁定并等待执行](https://www.google.com/search?q=%23%E7%AC%AC%E4%B8%89%E6%AD%A5%E9%94%81%E5%AE%9A%E5%B9%B6%E7%AD%89%E5%BE%85%E6%89%A7%E8%A1%8C)
-  - [⚠️ 重要提示](https://www.google.com/search?q=%23%EF%B8%8F-%E9%87%8D%E8%A6%81%E6%8F%90%E7%A4%BA)
-  - [📜 免责声明](https://www.google.com/search?q=%23-%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E)
-  - [📄 开源许可](https://www.google.com/search?q=%23-%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF)
+  - [✨ 功能特性]
+  - [🔧 安装方法]
+  - [📖 使用说明]
+      - [第一步：捕获选课请求]
+      - [第二步：设置抢课参数]
+      - [第三步：锁定并等待执行]
+  - [⚠️ 重要提示]
+  - [📜 免责声明]
+  - [📄 开源许可]
 
 ## ✨ 功能特性
 
@@ -34,7 +34,7 @@
 
 2.  **安装本脚本**:
 
-      * 点击此处的安装链接：[**安装 JNU 抢课助手**]([https://github.com/sa-y0nara/jnu-course-helper/releases/download/0.0/JNU.user.js])。
+      * 点击此处的安装链接：[**安装 JNU 抢课助手**](https://github.com/sa-y0nara/jnu-course-helper/releases/download/0.0/JNU.user.js)。
       * Tampermonkey 会自动弹出安装页面，点击“安装”即可。
 
 3.  **验证安装**:
@@ -58,7 +58,7 @@
 
 > **提示**:
 >
->   * “凭证状态”显示为 **\<span style="color: https://www.google.com/search?q=%23155724; background-color: https://www.google.com/search?q=%23d4edda; padding: 2px 5px; border-radius: 3px;"\>凭证已捕获\</span\>** 才算成功。
+>   * “凭证状态”显示为 **凭证已捕获** 才算成功。
 >   * 如果你想抢多门课程，可以重复第3步。脚本会按顺序轮流为这些课程发送请求。
 >   * 点击 **`[清空列表]`** 会清除所有已捕获的课程和凭证，需要重新捕获。
 
@@ -80,8 +80,8 @@
 
 > **服务器响应解读**:
 >
->   * \<span style="color: green;"\>绿色\</span\> 日志通常代表成功，例如包含 `"msg":"操作成功"` 的信息。
->   * \<span style="color: red;"\>红色\</span\> 日志代表失败或异常，例如“选课已满”、“不在选课时间”或“token失效”等。
+>   * 绿色 日志通常代表成功，例如包含 `"msg":"操作成功"` 的信息。
+>   * 红色 日志代表失败或异常，例如“选课已满”、“不在选课时间”或“token失效”等。
 
 ## ⚠️ 重要提示
 

@@ -34,7 +34,7 @@
 
 2.  **安装本脚本**:
 
-      * 点击此处的安装链接：[**安装 JNU 选课助手**](https://github.com/sa-y0nara/jnu-course-helper/releases/download/0.0/JNU.user.js)。
+      * 点击此处的安装链接：[**安装 JNU 选课助手**](https://github.com/sa-y0nara/jnu-course-helper/releases/download/0.1/JNU.user.js)。
       * Tampermonkey 会自动弹出安装页面，点击“安装”即可。
 
 3.  **验证安装**:

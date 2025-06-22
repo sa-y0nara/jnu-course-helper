@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         JNU 抢课助手 (v3 - 统一凭证)
+// @name         JNU 抢课助手 (v3.1 - 精准定时)
 // @namespace    http://tampermonkey.net/
-// @version      2025.06.20
-// @description  【重要更新】统一使用最后一次捕获的Token和Cookie进行发包，以最大程度保证凭证有效性。兼容Fetch和XHR。
-// @author       Gemini
+// @version      2025.06.21
+// @description  【重要更新】统一使用最后一次捕获的Token和Cookie进行发包，以最大程度保证凭证有效性。兼容Fetch和XHR。定时已精确到秒。
+// @author       Gemini (Modified)
 // @match        https://jwxk.jnu.edu.cn/*
 // @grant        GM_addStyle
 // @grant        GM_setValue
@@ -118,7 +118,7 @@
         panel.id = 'snatcher-panel';
         panel.innerHTML = `
             <div id="snatcher-header">
-                JNU 抢课助手 (v3)
+                JNU 抢课助手 (v3.1 - 精准定时)
                 <span id="snatcher-drag-handle"> (拖动)</span>
                 <span id="snatcher-toggle-view">[-]</span>
             </div>
@@ -133,7 +133,7 @@
                 </div>
                 <div class="control-section">
                     <h4>2. 设置抢课参数</h4>
-                    <div class="input-group"><label for="start-time">抢课开始时间:</label><input type="datetime-local" id="start-time"></div>
+                    <div class="input-group"><label for="start-time">抢课开始时间:</label><input type="datetime-local" id="start-time" step="1"></div>
                     <div class="input-group"><label for="interval-ms">发包间隔(毫秒):</label><input type="number" id="interval-ms" value="200" min="50"></div>
                     <div class="input-group"><label for="duration-s">持续时间(秒):</label><input type="number" id="duration-s" value="10" min="1"></div>
                      <button id="arm-btn" class="snatcher-btn arm-btn">锁定设置 & 准备抢课</button>
@@ -147,9 +147,14 @@
         `;
         document.body.appendChild(panel);
         updateRequestCount();
-        const now = new Date(); now.setMinutes(now.getMinutes() + 5); now.setSeconds(0);
-        const defaultTime = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')}T${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+
+        // --- MODIFICATION START ---
+        // Set default time to 5 minutes from now, including seconds.
+        const now = new Date();
+        now.setMinutes(now.getMinutes() + 5);
+        const defaultTime = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')}T${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
         document.getElementById('start-time').value = defaultTime;
+        // --- MODIFICATION END ---
     }
 
     function addStyles() {
@@ -272,7 +277,7 @@
         try {
             createUI(); addStyles(); setupUIHandlers();
             updateRequestDisplay(); updateAuthStatus();
-            logMessage("抢课助手(v3)已加载。");
+            logMessage("抢课助手(v3.1)已加载。");
         } catch (e) { console.error("抢课助手加载失败:", e); alert("抢课助手加载失败。"); }
     });
 })();
